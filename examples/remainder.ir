@@ -1,0 +1,9 @@
+# Example 6: Remainder / Tail (VECTORIZABLE with tail)
+# C[i] = A[i] + B[i]  for i in [0, 10)
+# width=4 -> vectorIterations=2 (8 scalar iters covered), remainderIterations=2
+LOOP i 0 10 1
+LOAD t1, A[i]
+LOAD t2, B[i]
+ADD t3, t1, t2
+STORE C[i], t3
+ENDLOOP

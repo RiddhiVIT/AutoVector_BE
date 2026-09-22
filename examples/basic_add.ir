@@ -1,0 +1,8 @@
+# Example 1: Simple Addition (VECTORIZABLE)
+# C[i] = A[i] + B[i]  for i in [0, 100)
+LOOP i 0 100 1
+LOAD t1, A[i]
+LOAD t2, B[i]
+ADD t3, t1, t2
+STORE C[i], t3
+ENDLOOP

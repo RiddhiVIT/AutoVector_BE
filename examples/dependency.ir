@@ -1,0 +1,9 @@
+# Example 4: Loop-Carried Dependency (REJECTED)
+# A[i] = A[i-1] + 1  for i in [1, 100)
+# RAW dependency: A[i] depends on A[i-1], distance 1
+LOOP i 1 100 1
+LOAD t1, A[i-1]
+CONST t2, 1
+ADD t3, t1, t2
+STORE A[i], t3
+ENDLOOP

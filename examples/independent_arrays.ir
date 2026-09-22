@@ -1,0 +1,10 @@
+# Example 3: Independent Arrays (VECTORIZABLE)
+# D[i] = A[i] + B[i] - C[i]  for i in [0, 100)
+LOOP i 0 100 1
+LOAD t1, A[i]
+LOAD t2, B[i]
+ADD t3, t1, t2
+LOAD t4, C[i]
+SUB t5, t3, t4
+STORE D[i], t5
+ENDLOOP

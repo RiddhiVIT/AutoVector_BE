@@ -1,0 +1,7 @@
+# Example 5: Array Shift (REJECTED)
+# A[i] = A[i+1]  for i in [0, 100)
+# Loop-carried dependency: reads ahead of the write position (WAR)
+LOOP i 0 100 1
+LOAD t1, A[i+1]
+STORE A[i], t1
+ENDLOOP
