@@ -201,7 +201,6 @@ _TOKEN_RE = re.compile(r"[A-Za-z_]\w*\[[^\]]*\]|\d+|[+\-*/]")
 
 _INDEX_RE_TMPL = r"^{iv}\s*[+-]\s*\d+$"
 
-
 def parse_c_like(text: str) -> Loop:
     if not isinstance(text, str) or not text.strip():
         raise ParseError("Empty C-like source.")
